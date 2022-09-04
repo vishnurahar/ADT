@@ -16,9 +16,7 @@ import com.example.adt.viewmodel.MainViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
     private lateinit var mainViewModel: MainViewModel
-
     private val employeeListAdapter by lazy { EmployeeListAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {

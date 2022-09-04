@@ -11,7 +11,7 @@ import com.example.adt.databinding.ListItemEmployeeListBinding
 import com.example.adt.model.Data
 
 
-class EmployeeListAdapter() :
+class EmployeeListAdapter :
     ListAdapter<Data, EmployeeListAdapter.EmployeeListViewHolder>(EMPLOYEE_COMPARATOR) {
 
     override fun onCreateViewHolder(
@@ -46,7 +46,7 @@ class EmployeeListAdapter() :
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(employeeItem: Data) {
             with(binding) {
-                profileImage.setImageResource(R.drawable.cartoon);
+                profileImage.setImageResource(R.drawable.cartoon)
                 idTv.text = buildString {
                     append("ID : ")
                     append(employeeItem.id)

@@ -18,18 +18,14 @@ class EmployeeListRepository(
 
     suspend fun getEmployeeList() {
         val result = employeeApi.getEmployeeList()
-
             try {
                 if (result.body() != null) {
                     employeeListLiveData.postValue(Response.Success(result.body()))
-                    Log.d("First call", "result ${result.body()}")
                 } else {
                     employeeListLiveData.postValue(Response.Error("API Error"))
                 }
             }catch (e : Exception){
                 employeeListLiveData.postValue(Response.Error(e.message.toString()))
             }
-
-
     }
 }
